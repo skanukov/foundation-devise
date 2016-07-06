@@ -8,4 +8,9 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+
+  # Returns the Foundation specific class for flash type
+  def foundation_class_for(flash_type)
+    { alert: 'alert', notice: 'success' }[flash_type.to_sym] || flash_type.to_s
+  end
 end

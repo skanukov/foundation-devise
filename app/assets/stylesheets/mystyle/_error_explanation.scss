@@ -1,0 +1,28 @@
+#error_explanation {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  background-color: $light-gray;
+  border: 1px solid map-get($foundation-palette, alert);
+  border-radius: $global-radius;
+
+  h2 {
+    margin: -0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.375rem 0.375rem 0.375rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: map-get($foundation-palette, alert);
+  }
+
+  ul li {
+    font-size: 0.875rem;
+  }
+}
+
+.field_with_errors {
+  > input {
+    @include form-input-error;
+  }
+}

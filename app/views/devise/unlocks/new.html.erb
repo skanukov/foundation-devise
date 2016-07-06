@@ -1,16 +1,29 @@
-<h2>Resend unlock instructions</h2>
+<% provide :title, 'Разблокировка аккаунта' %>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="row align-center">
+  <div class="small-12 medium-6 columns">
+    <div class="callout large auth">
+      <h2>Разблокировка аккаунта</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <%= form_for(resource, as: resource_name, url: unlock_path(resource_name),
+                             html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="row">
+          <fieldset class="small-12 columns">
+            <%= f.email_field :email, autofocus: true, placeholder: 'E-mail',
+                              required: true %>
+          </fieldset>
+        </div>
+
+        <div class="row">
+          <fieldset class="small-12 columns">
+            <%= f.submit 'Разблокировать аккаунт', class: 'expanded button' %>
+          </fieldset>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
